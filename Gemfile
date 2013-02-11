@@ -1,9 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.0.7'
 gem 'sqlite3'
 gem 'savon'
 gem 'nokogiri'
+gem 'builder'
+gem 'ffi'
 
 
 group :development, :test do
