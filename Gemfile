@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'savon', '0.9.1'
 gem 'nokogiri'
 gem 'ffi'
+gem 'prototype-rails'
 
 
 group :development, :test do
