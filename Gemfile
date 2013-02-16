@@ -12,5 +12,5 @@ end
 
 group :test do
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
 end
