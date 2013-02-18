@@ -14,3 +14,8 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails', :require => false
 end
+
+group :development, :test do
+	gem "rspec-rails", "~> 2.0"
+	gem 'guard-rspec'
+end	
