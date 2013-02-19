@@ -1,0 +1,4 @@
+1. User authentication/authorization
+2. Checkbox by best_in_place
+3. Filtering with best_in_place
+4. Project fixes 
