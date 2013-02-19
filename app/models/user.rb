@@ -3,12 +3,15 @@ class User < ActiveRecord::Base
 	attr_accessor :login, :password
 
 	has_many :countries, :dependent => :destroy
-	has_many :currencies, :dependent => :destory
+	has_many :currencies, :dependent => :destroy
+
+	validate :login, :presence => true
+	validate :password, :presence => true
 
 	before_save :encrypt_password
 
 	def has_password?(submitted_password)
-		encrypt_password == encrypt(submitted_password)
+		encrypted_password == encrypt(submitted_password)
 	end
 
 	class << self
@@ -27,7 +30,7 @@ class User < ActiveRecord::Base
 
 	def encrypt_password
 		self.salt = make_salt unless has_password?(password)
-		self.encrypt_password = encrypt(password)
+		self.encrypted_password = encrypt(password)
 	end
 
 	def encrypt(string)

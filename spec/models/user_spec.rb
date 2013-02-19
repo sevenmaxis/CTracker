@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe User do
+describe User, :focus => true do
   
   before(:each) do
-  	@attr = { :login => "login", :passowrd => "password" }
+  	@attr = { :login => "login", :password => "password" }
   end
 
   it "should create a user" do

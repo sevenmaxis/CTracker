@@ -1,4 +1,4 @@
-module SessionHelper
+module SessionsHelper
 
 	def sign_in(user)
 		cookies.permanent.signed[:remeber_token] = [user.id, user.salt]
