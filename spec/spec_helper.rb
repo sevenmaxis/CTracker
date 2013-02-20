@@ -36,5 +36,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "default"
 
-  config.filter_run :focus => true
+  #config.filter_run :focus => true
 end

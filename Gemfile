@@ -15,6 +15,7 @@ group :test do
 end
 
 group :development, :test do
+	gem 'debugger'
 	gem "rspec-rails", "~> 2.0"
 	gem 'guard-rspec'
 	gem 'rb-inotify', '~> 0.8.8'

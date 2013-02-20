@@ -1,6 +1,7 @@
 require 'spec_helper'
+#require 'debugger'; debugger
 
-describe User, :focus => true do
+describe User do
   
   before(:each) do
   	@attr = { :login => "login", :password => "password" }
@@ -26,7 +27,7 @@ describe User, :focus => true do
   	before(:each) { @user = User.new(@attr) }
 
   	it "should have a password attribute" do
-  		@user.should responde_to(:password)
+  		@user.should respond_to(:password)
   	end
   end
 
@@ -42,7 +43,7 @@ describe User, :focus => true do
   	before(:each) { @user = User.create!(@attr) }
 
   	it "should have an encrypted password attribute" do
-  		@user.should responde_to(:encrypted_password)
+  		@user.should respond_to(:encrypted_password)
   	end
 
   	it "should set the encrypted password attribute" do
@@ -50,13 +51,13 @@ describe User, :focus => true do
   	end
 
   	it "should have a salt" do
-  		@user.should responde_to(:salt)
+  		@user.should respond_to(:salt)
   	end
 
   	describe "has_password? method" do
 
 	  	it "should exist" do
-	  		@user.should responde_to(:has_password?)
+	  		@user.should respond_to(:has_password?)
 	  	end
 
 	  	it "should return true if the password match" do
@@ -71,7 +72,7 @@ describe User, :focus => true do
 	  describe "authenticate method" do
 
 	  	it "should exist" do
-	  		User.should responde_to(:authenticate)
+	  		User.should respond_to(:authenticate)
 	  	end
 
 	  	it "should return nil on login/password mismatch" do

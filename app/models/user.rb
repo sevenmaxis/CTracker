@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 	attr_accessor :password
-	attr_accessor :login, :password
+	attr_accessible :login, :password
 
 	has_many :countries, :dependent => :destroy
 	has_many :currencies, :dependent => :destroy
 
-	validate :login, :presence => true
-	validate :password, :presence => true
+	validates :login, :presence => true, :uniqueness => true
+	validates :password, :presence => true
 
 	before_save :encrypt_password
 
