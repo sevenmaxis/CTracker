@@ -5,7 +5,9 @@ CurrencyTracker::Application.routes.draw do
 
   resources :currencies, :only => [:index, :show]
 
-  resources :sessions, :only => [:new, :create, :destroy]
+  resource :session, :only => [:create, :destroy]
+
+  resource :something
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
