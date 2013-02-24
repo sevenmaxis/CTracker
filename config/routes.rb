@@ -5,6 +5,8 @@ CurrencyTracker::Application.routes.draw do
 
   resources :currencies, :only => [:index, :show]
 
+  resources :users, :only => [:new]
+
   resource :session, :only => [:create, :destroy]
 
   resource :something
