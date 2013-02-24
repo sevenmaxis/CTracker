@@ -12,6 +12,7 @@ end
 group :test do
   gem 'cucumber'
   gem 'cucumber-rails', :require => false
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do

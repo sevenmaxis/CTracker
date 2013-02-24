@@ -10,24 +10,16 @@
 
 <header>
   <h1>CurrencyTracker</h1>
-  <nav>
-    <ul>
-    <% if signed_in? %>
-      <li><%= link_to "Currencies", currencies_path %></li>
-      <li><%= link_to "Countries", countries_path %></li>
-      <li><%= link_to "Sign out", 
-    <% else %>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <li><a>or</a></li>
-      <li><%= link_to "Sign in", new_user_session_path %></li>
-    <% end %>
-    </ul>
+  <nav id="authentication">
+    <%= render (singed_in? ? 'users/info' : 'sessions/signs') %>
   </nav>
 </header>
 
-<% unless signed_in? %>
-  <%= yield %>
-<% end %>
+<div id="main">
+  <% unless signed_in? %>
+    <%= yield %>
+  <% end %>
+</div>
 
 <footer>
   CurrencyTracker &copy; Copyright 2011 by Smart Enterprises.

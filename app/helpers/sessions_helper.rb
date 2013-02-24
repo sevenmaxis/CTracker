@@ -1,7 +1,9 @@
+#require 'debugger'; debugger
+
 module SessionsHelper
 
 	def sign_in(user)
-		cookies.permanent.signed[:remeber_token] = [user.id, user.salt]
+		cookies.permanent.signed[:remember_token] = [user.id, user.salt]
 		self.current_user = user
 	end
 
@@ -18,7 +20,7 @@ module SessionsHelper
 	end
 
 	def sign_out
-		cookies.delete(:remeber_token)
+		cookies.delete(:remember_token)
 		self.current_user = nil
 	end
 
